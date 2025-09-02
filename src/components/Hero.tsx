@@ -1,4 +1,3 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { storeConfig } from "../data/store";
 import { Button } from "./ui/button";
 
@@ -9,23 +8,21 @@ interface HeroProps {
 export function Hero({ onViewProductsClick }: HeroProps) {
     return (
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-            {/* Background Image - Desktop (16:9) */}
-            <div className="absolute inset-0 hidden md:block">
-                <ImageWithFallback
-                    src="https://res.cloudinary.com/dpwzpx39s/image/upload/v1756829656/header_griselda_zcwx8x.jpg"
-                    alt="Modelos elegantes de Griselda Studio"
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30" />
-            </div>
-
-            {/* Background Image - Mobile (9:16) */}
-            <div className="absolute inset-0 block md:hidden">
-                <ImageWithFallback
-                    src="https://res.cloudinary.com/dpwzpx39s/image/upload/v1756840416/header_griselda_movil_wmgdiw.jpg"
-                    alt="Modelos elegantes de Griselda Studio"
-                    className="w-full h-full object-cover"
-                />
+            {/* Background Image con <picture> */}
+            <div className="absolute inset-0">
+                <picture>
+                    {/* Desktop 16:9 */}
+                    <source
+                        media="(min-width: 768px)"
+                        srcSet="https://res.cloudinary.com/dpwzpx39s/image/upload/v1756829656/header_griselda_zcwx8x.jpg"
+                    />
+                    {/* Mobile 9:16 */}
+                    <img
+                        src="https://res.cloudinary.com/dpwzpx39s/image/upload/v1756840416/header_griselda_movil_wmgdiw.jpg"
+                        alt="Modelos elegantes de Griselda Studio"
+                        className="w-full h-full object-cover"
+                    />
+                </picture>
                 <div className="absolute inset-0 bg-black/30" />
             </div>
 
