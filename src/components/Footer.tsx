@@ -36,13 +36,13 @@ export function Footer() {
                 </div>
 
                 <div
-                    className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
+                    className="flex flex-row justify-center items-center space-x-8 mb-8 gap-6"
+                >
                     <button
                         onClick={handleInstagramClick}
                         className="flex items-center space-x-2 hover:text-gray-300 transition-colors duration-200"
                     >
                         <Instagram className="w-5 h-5"/>
-                        {/*<span>INSTAGRAM</span>*/}
                     </button>
 
                     <button
@@ -50,14 +50,13 @@ export function Footer() {
                         className="flex items-center space-x-2 hover:text-gray-300 transition-colors duration-200"
                     >
                         <ImWhatsapp className="w-5 h-5"/>
-                        {/*<span>WhatsApp</span>*/}
                     </button>
+
                     <button
                         onClick={handleTiktokClick}
                         className="flex items-center space-x-2 hover:text-gray-300 transition-colors duration-200"
                     >
                         <SiTiktok className="w-5 h-5"/>
-                        {/*<span>TikTok</span>*/}
                     </button>
                 </div>
 
