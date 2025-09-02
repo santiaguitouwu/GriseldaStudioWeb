@@ -3,7 +3,7 @@
 
 # build de producción
 /dist
-
+/build
 # cachés de Vite
 /.vite
 
